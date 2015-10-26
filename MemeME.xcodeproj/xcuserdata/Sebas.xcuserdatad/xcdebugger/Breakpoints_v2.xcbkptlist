@@ -2,4 +2,160 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeME/SentMemesTableViewController.swift"
+            timestampString = "467427505.258429"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeME/SentMemesCollectionCell.swift"
+            timestampString = "467423868.93954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SentMemesCollectionCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionCell.memeImage.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionCell.swift"
+                  timestampString = "467427620.296446"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionCell.memeImage.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionCell.swift"
+                  timestampString = "467427620.296593"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionCell.init (MemeME.SentMemesCollectionCell.Type)(frame : C.CGRect) -&gt; MemeME.SentMemesCollectionCell"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionCell.swift"
+                  timestampString = "467427620.296799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionCell.init (MemeME.SentMemesCollectionCell.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;MemeME.SentMemesCollectionCell&gt;"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionCell.swift"
+                  timestampString = "467427620.296987"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = ""
+            moduleName = "">
+            <Locations>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeME/SentMemesCollectionViewController.swift"
+            timestampString = "467432876.964675"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SentMemesCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionViewController.__deallocating_deinit"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionViewController.swift"
+                  timestampString = "467427620.345502"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeME.SentMemesCollectionViewController.init (MemeME.SentMemesCollectionViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;MemeME.SentMemesCollectionViewController&gt;"
+                  moduleName = "MemeME"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sebas/Desktop/IOSApps/MemeMEV2/MemeME/SentMemesCollectionViewController.swift"
+                  timestampString = "467427620.34598"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B71BE2B51BD96886006485D4 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BE2B41BD96886006485D4 /* SentMemesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B71BE2B91BD968E3006485D4 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BE2B81BD968E3006485D4 /* SentMemesCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B71BE2BB1BDA9928006485D4 /* SentMemesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BE2BA1BDA9928006485D4 /* SentMemesCollectionCell.swift */; settings = {ASSET_TAGS = (); }; };
+		B71BE2BD1BDAA07C006485D4 /* SentMemesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BE2BC1BDAA07C006485D4 /* SentMemesDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B744A1881BCD36D600337388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A1871BCD36D600337388 /* AppDelegate.swift */; };
-		B744A18A1BCD36D600337388 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A1891BCD36D600337388 /* ViewController.swift */; };
+		B744A18A1BCD36D600337388 /* MemeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A1891BCD36D600337388 /* MemeEditorView.swift */; };
 		B744A18D1BCD36D600337388 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B744A18B1BCD36D600337388 /* Main.storyboard */; };
 		B744A18F1BCD36D600337388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B744A18E1BCD36D600337388 /* Assets.xcassets */; };
 		B744A1921BCD36D600337388 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B744A1901BCD36D600337388 /* LaunchScreen.storyboard */; };
@@ -35,9 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B71BE2B41BD96886006485D4 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
+		B71BE2B81BD968E3006485D4 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
+		B71BE2BA1BDA9928006485D4 /* SentMemesCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionCell.swift; sourceTree = "<group>"; };
+		B71BE2BC1BDAA07C006485D4 /* SentMemesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesDetailViewController.swift; sourceTree = "<group>"; };
 		B744A1841BCD36D600337388 /* MemeME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B744A1871BCD36D600337388 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B744A1891BCD36D600337388 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B744A1891BCD36D600337388 /* MemeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorView.swift; sourceTree = "<group>"; };
 		B744A18C1BCD36D600337388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B744A18E1BCD36D600337388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B744A1911BCD36D600337388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,12 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				B744A1871BCD36D600337388 /* AppDelegate.swift */,
-				B744A1891BCD36D600337388 /* ViewController.swift */,
+				B744A1891BCD36D600337388 /* MemeEditorView.swift */,
 				B744A1B51BCD6FC700337388 /* Meme.swift */,
+				B71BE2BA1BDA9928006485D4 /* SentMemesCollectionCell.swift */,
 				B744A18B1BCD36D600337388 /* Main.storyboard */,
 				B744A18E1BCD36D600337388 /* Assets.xcassets */,
 				B744A1901BCD36D600337388 /* LaunchScreen.storyboard */,
 				B744A1931BCD36D600337388 /* Info.plist */,
+				B71BE2BC1BDAA07C006485D4 /* SentMemesDetailViewController.swift */,
+				B71BE2B41BD96886006485D4 /* SentMemesTableViewController.swift */,
+				B71BE2B81BD968E3006485D4 /* SentMemesCollectionViewController.swift */,
 			);
 			path = MemeME;
 			sourceTree = "<group>";
@@ -259,8 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B744A1B61BCD6FC700337388 /* Meme.swift in Sources */,
-				B744A18A1BCD36D600337388 /* ViewController.swift in Sources */,
+				B744A18A1BCD36D600337388 /* MemeEditorView.swift in Sources */,
+				B71BE2BD1BDAA07C006485D4 /* SentMemesDetailViewController.swift in Sources */,
+				B71BE2B91BD968E3006485D4 /* SentMemesCollectionViewController.swift in Sources */,
 				B744A1881BCD36D600337388 /* AppDelegate.swift in Sources */,
+				B71BE2B51BD96886006485D4 /* SentMemesTableViewController.swift in Sources */,
+				B71BE2BB1BDA9928006485D4 /* SentMemesCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +503,7 @@
 				B744A1AE1BCD36D600337388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B744A1AF1BCD36D600337388 /* Build configuration list for PBXNativeTarget "MemeMETests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +512,7 @@
 				B744A1B11BCD36D600337388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B744A1B21BCD36D600337388 /* Build configuration list for PBXNativeTarget "MemeMEUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +521,7 @@
 				B744A1B41BCD36D600337388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

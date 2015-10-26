@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class MemeEditorView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var topMemeTextField: UITextField!
@@ -134,7 +134,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         
-        if bottomMemeTextField.isFirstResponder() {
+       if bottomMemeTextField.editing {
             return keyboardSize.CGRectValue().height
         } else {
             
@@ -145,31 +145,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //shift view when keyboard displays so we don't obscure the text field
     func keyboardWillShow(notification: NSNotification) {
         if bottomMemeTextField.isFirstResponder() {
-            
-            //doesn't work
-            //view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
             
             //disable camera and album
             albumButton.enabled = false
             cameraButton.enabled = false
-            
-            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
     //return view to original position when keyboard is dismissed
     func keyboardWillHide(notification: NSNotification) {
         if bottomMemeTextField.isFirstResponder() {
-            
-            //doesn't work
-            //view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y += getKeyboardHeight(notification)
             
             //enable camera and album
             albumButton.enabled = true
-            cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-            
-            view.frame.origin.y = 0
-        }
+            cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -180,7 +171,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             //enable share button
             shareButton.enabled = true
-            self.dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
