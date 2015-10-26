@@ -17,6 +17,6 @@ class SentMemesDetailViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.detailView.image = savedMeme.memedImage
+        detailView.image = savedMeme.memedImage
     }
 }

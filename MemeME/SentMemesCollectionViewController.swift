@@ -13,28 +13,30 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         //set navigation bar title
-        self.navigationItem.title = "Sent Memes"
-        self.collectionView.reloadData()
+        navigationItem.title = "Sent Memes"
+        collectionView.reloadData()
     }
     
     //collection delegate methods
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes.count
+        return appDelegate.memes.count
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -59,7 +61,7 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCell", forIndexPath: indexPath) as! SentMemesCollectionCell
-        let meme = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+        let meme = appDelegate.memes
         
         // Set image in collection view
         cell.memeImage.image = meme[indexPath.item].memedImage
@@ -69,11 +71,11 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //set data for view controller
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("SentMemesDetailViewController") as! SentMemesDetailViewController
-        detailController.savedMeme = (UIApplication.sharedApplication().delegate as! AppDelegate).memes[indexPath.row]
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("SentMemesDetailViewController") as! SentMemesDetailViewController
+        detailController.savedMeme = appDelegate.memes[indexPath.row]
         
         // Open SentMemesDetailViewController
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
     }
     
 }
