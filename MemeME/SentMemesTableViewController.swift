@@ -36,28 +36,6 @@ class SentMemesTableViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-    
-    /*func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Handle Delete
-            // 1. Remove data from Meme shared model
-            
-            //tableView.beginUpdates()
-            //var meme = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-            //tableView.reloadData()
-            //meme[indexPath.item]
-            memes.removeAtIndex(indexPath.row) //langData is array from i delete values
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            //tableView.endUpdates()
-            
-            /*// 2. Update the table view
-            var meme = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-            //tableView.reloadData()
-            //meme[indexPath.item]
-            meme.removeAtIndex(indexPath.row) //langData is array from i delete values
-            tableView.deleteRowsAtIndexPaths([indexPath],  withRowAnimation: UITableViewRowAnimation.Automatic)*/
-        }
-    }*/
    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
