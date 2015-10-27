@@ -56,8 +56,8 @@ class SentMemesTableViewController: UIViewController, UITableViewDelegate, UITab
         alert.addAction(CancelAction)
         
         // Support presentation in iPad
-        alert.popoverPresentationController?.sourceView = self.view
-        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        alert.popoverPresentationController?.sourceView = view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(view.bounds.size.width / 2.0, view.bounds.size.height / 2.0, 1.0, 1.0)
         
         presentViewController(alert, animated: true, completion: nil)
     }

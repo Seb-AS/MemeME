@@ -19,4 +19,11 @@ class SentMemesDetailViewController: UIViewController {
         super.viewDidLoad()
         detailView.image = savedMeme.memedImage
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "edit" {
+            let destination = segue.destinationViewController as! MemeEditorView
+            destination.editMeme = savedMeme
+        }
+    }
 }

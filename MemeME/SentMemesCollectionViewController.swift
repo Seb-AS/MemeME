@@ -9,21 +9,28 @@
 import Foundation
 import UIKit
 
-class SentMemesCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class SentMemesCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var selectedCell: SentMemesCollectionCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        // set the Edit/Done button to the nav bar left button
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     
     override func viewDidAppear(animated: Bool) {
-        collectionView.reloadData()
+        super.viewDidAppear(animated)
+        collectionView!.reloadData()
+        // disable the button if there are no memes (after a delete)
+       navigationItem.leftBarButtonItem?.enabled = appDelegate.memes.count > 0
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +39,12 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
         //set navigation bar title
         navigationItem.title = "Sent Memes"
         collectionView.reloadData()
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        collectionView!.reloadData()
     }
     
     //collection delegate methods
@@ -53,7 +66,7 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let totalWidth: CGFloat = (self.view.frame.width / 3)//3 columns
+        let totalWidth: CGFloat = (view.frame.width / 3)//3 columns
         let totalHeight: CGFloat = totalWidth
         
         return CGSizeMake(totalWidth, totalHeight)
@@ -63,10 +76,15 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCell", forIndexPath: indexPath) as! SentMemesCollectionCell
         let meme = appDelegate.memes
         
-        // Set image in collection view
-        cell.memeImage.image = meme[indexPath.item].memedImage
+        selectedCell = cell
         
-        return cell
+        // Set image in collection view
+        selectedCell!.memeImage.image = meme[indexPath.item].memedImage
+        
+        selectedCell!.deleteButton.hidden = !editing
+        selectedCell!.deleteButton.addTarget(self, action: "onPressDelete:", forControlEvents: .TouchUpInside)
+        
+        return selectedCell!
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -78,5 +96,19 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
         navigationController!.pushViewController(detailController, animated: true)
     }
     
+    @IBAction func onPressDelete(sender: UIButton) {
+        // need to get to the cell from the button
+        //let cell = sender.superview!.superview! as! SentMemesCollectionCell
+        let index = collectionView!.indexPathForCell(selectedCell!)!
+        appDelegate.memes.removeAtIndex(index.item)
+        collectionView!.deleteItemsAtIndexPaths([index]);
+        selectedCell = nil
+        
+        //if still items in the collections then don't change the button to edit
+        let stillItems = appDelegate.memes.count > 0
+        
+        setEditing(stillItems, animated: true)
+        navigationItem.leftBarButtonItem?.enabled = stillItems
+    }
 }
 

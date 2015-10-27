@@ -345,6 +345,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWg-3F-y4m">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="4" y="44" width="396" height="556"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -378,6 +381,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Bfj-y5-ymv">
+                        <barButtonItem key="rightBarButtonItem" width="8" systemItem="edit" id="fTq-wA-fwy">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="edit" id="zsp-7E-pXn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailView" destination="mWg-3F-y4m" id="aZD-EE-Kpi"/>
                     </connections>
@@ -419,6 +429,32 @@
                                                     <rect key="frame" x="10" y="10" width="100" height="100"/>
                                                     <animations/>
                                                 </imageView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwT-tU-fQi" userLabel="delete">
+                                                    <rect key="frame" x="82" y="8" width="22" height="24"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="6M9-vV-Z48"/>
+                                                        <constraint firstAttribute="height" constant="36" id="FYe-tk-gfd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" image="delete">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="6M9-vV-Z48"/>
+                                                            <exclude reference="FYe-tk-gfd"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="85" y="0.0" width="35" height="36"/>
+                                                        <mask key="constraints">
+                                                            <include reference="6M9-vV-Z48"/>
+                                                            <include reference="FYe-tk-gfd"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -429,26 +465,36 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="B2D-yT-CHJ" secondAttribute="bottom" constant="2" id="8sK-PY-vsa"/>
                                             <constraint firstItem="B2D-yT-CHJ" firstAttribute="top" secondItem="n2T-zu-fJZ" secondAttribute="topMargin" constant="2" id="JCR-lE-l7d"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="B2D-yT-CHJ" secondAttribute="trailing" constant="2" id="enV-hi-bid"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="GwT-tU-fQi" secondAttribute="trailing" constant="-8" id="mEA-Gg-HEW"/>
                                             <constraint firstItem="B2D-yT-CHJ" firstAttribute="leading" secondItem="n2T-zu-fJZ" secondAttribute="leadingMargin" constant="2" id="vTb-Bh-fHd"/>
                                         </constraints>
                                         <size key="customSize" width="120" height="120"/>
                                         <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="GwT-tU-fQi"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <exclude reference="8sK-PY-vsa"/>
                                                 <exclude reference="JCR-lE-l7d"/>
                                                 <exclude reference="enV-hi-bid"/>
                                                 <exclude reference="vTb-Bh-fHd"/>
+                                                <exclude reference="mEA-Gg-HEW"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="GwT-tU-fQi"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <include reference="8sK-PY-vsa"/>
                                                 <include reference="JCR-lE-l7d"/>
                                                 <include reference="enV-hi-bid"/>
                                                 <include reference="vTb-Bh-fHd"/>
+                                                <include reference="mEA-Gg-HEW"/>
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="deleteButton" destination="GwT-tU-fQi" id="dXV-oy-5aQ"/>
                                             <outlet property="memeImage" destination="B2D-yT-CHJ" id="Cow-yE-Ack"/>
                                         </connections>
                                     </collectionViewCell>
@@ -482,9 +528,10 @@
     </scenes>
     <resources>
         <image name="collection" width="30" height="30"/>
+        <image name="delete" width="300" height="300"/>
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="149-t7-wZz"/>
+        <segue reference="54P-D7-Kkc"/>
     </inferredMetricsTieBreakers>
 </document>
