@@ -2,7 +2,7 @@
 Project developed for Udacity iOS Developer Nanodegree
 
 Development environment: 
-IDE: Xcode 7.0+ 
+IDE: Xcode 7.3+ 
 Language: Swift
 
 Summary
